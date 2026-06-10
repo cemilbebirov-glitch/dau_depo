@@ -1,0 +1,58 @@
+<!-- ======= MODULE: MODEL ======= -->
+<section class="module-panel" id="module-model" style="display:none;">
+    <div class="panel-header">
+        <div class="panel-title-group">
+            <div class="panel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <h2 class="panel-title">MODEL İDARƏETMƏ</h2>
+        </div>
+    </div>
+    <!-- Active Model -->
+    <div class="model-active-card">
+        <div class="model-active-header">
+            <span class="model-active-label">AKTİV MODEL</span>
+            <span class="model-active-badge" id="modelActiveStatus">--</span>
+        </div>
+        <div class="model-active-name" id="modelActiveName">--</div>
+        <div class="model-active-provider" id="modelActiveProvider">--</div>
+    </div>
+    <!-- Model List -->
+    <div class="panel-subsection">
+        <h3 class="subsection-title">MODELLƏR</h3>
+        <div class="model-grid" id="modelGrid">
+            <div class="hud-empty">Modellər yüklənir...</div>
+        </div>
+    </div>
+    <!-- Add Model Form -->
+    <div class="panel-subsection">
+        <h3 class="subsection-title">MODEL ƏLAVƏ ET</h3>
+        <div class="hud-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="hud-label">AD</label>
+                    <input type="text" id="modelAddName" class="hud-input" placeholder="model adı">
+                </div>
+                <div class="form-group">
+                    <label class="hud-label">PROVAİDER</label>
+                    <select id="modelAddProvider" class="hud-select">
+                        <option value="ollama">Ollama</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="hud-label">API URL</label>
+                <input type="text" id="modelAddUrl" class="hud-input" placeholder="http://localhost:11434">
+            </div>
+            <div class="form-group">
+                <label class="hud-label">API AÇARI</label>
+                <input type="password" id="modelAddKey" class="hud-input" placeholder="opsional">
+            </div>
+            <div class="form-actions">
+                <button class="btn-hud btn-primary" onclick="modelAdd()">ƏLAVƏ ET</button>
+            </div>
+        </div>
+    </div>
+</section>

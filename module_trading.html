@@ -1,0 +1,21 @@
+<!-- ======= MODULE: TRADING ======= -->
+<section class="module-panel" id="module-trading" style="display:none;">
+    <div class="panel-header">
+        <div class="panel-title-group">
+            <div class="panel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+            </div>
+            <h2 class="panel-title">TİCARƏT JURNALI</h2>
+        </div>
+        <div class="panel-actions">
+            <button class="btn-hud" onclick="tradingShowAdd()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                YENİ TİCARƏT
+            </button>
+        </div>
+    </div>
+    <!-- Sub-Components -->
+    {% include 'components/trading/trading_stats.html' %}
+    {% include 'components/trading/trading_form.html' %}
+    {% include 'components/trading/trading_table.html' %}
+</section>

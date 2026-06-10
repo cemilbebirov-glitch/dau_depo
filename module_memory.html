@@ -1,0 +1,63 @@
+<!-- ======= MODULE: MEMORY ======= -->
+<section class="module-panel" id="module-memory" style="display:block;">
+    <div class="panel-header">
+        <div class="panel-title-group">
+            <div class="panel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h2 class="panel-title">YADDAŞ SİSTEMİ</h2>
+        </div>
+        <div class="panel-actions">
+            <button class="btn-hud" onclick="memoryShowAdd()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                ƏLAVƏ ET
+            </button>
+            <button class="btn-hud" onclick="memoryRefresh()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.65 6.35A7.96 7.96 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                YENİLƏ
+            </button>
+        </div>
+    </div>
+    <!-- Memory Search -->
+    <div class="hud-search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ff3366" stroke-width="2"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg>
+        <input type="text" id="memorySearch" placeholder="Yaddaş axtar..." oninput="memorySearchHandler()">
+    </div>
+    <!-- Memory Add Form -->
+    <div class="hud-form" id="memoryAddForm" style="display:none;">
+        <div class="form-row">
+            <div class="form-group">
+                <label class="hud-label">KATEQORİYA</label>
+                <select id="memoryCategory" class="hud-select">
+                    <option value="general">Ümumi</option>
+                    <option value="conversation">Söhbət</option>
+                    <option value="fact">Fakt</option>
+                    <option value="instruction">Təlimat</option>
+                    <option value="code">Kod</option>
+                    <option value="trading">Ticarət</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="hud-label">VACİBLİK</label>
+                <select id="memoryImportance" class="hud-select">
+                    <option value="low">Aşağı</option>
+                    <option value="medium">Orta</option>
+                    <option value="high">Yüksək</option>
+                    <option value="critical">Kritik</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="hud-label">MƏZMUN</label>
+            <textarea id="memoryContent" class="hud-textarea" rows="3" placeholder="Yadda saxlamaq istədiyiniz məlumat..."></textarea>
+        </div>
+        <div class="form-actions">
+            <button class="btn-hud btn-primary" onclick="memorySave()">YADDƏ SAXLA</button>
+            <button class="btn-hud" onclick="memoryHideAdd()">LƏĞV ET</button>
+        </div>
+    </div>
+    <!-- Memory List -->
+    <div class="data-grid" id="memoryList">
+        <div class="hud-empty">Yaddaş məlumatları yüklənir...</div>
+    </div>
+</section>

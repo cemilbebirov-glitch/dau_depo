@@ -1,0 +1,26 @@
+<!-- ====== RIGHT SIDEBAR - CHAT ====== -->
+<aside class="chat-sidebar">
+    <div class="chat-sidebar-inner">
+        <div class="chat-sidebar-header">
+            <div class="chat-sidebar-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2" width="20" height="20"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                <span>DAU CHAT</span>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg system">
+                <div class="msg-avatar">DAU</div>
+                <div class="msg-bubble">
+                    <div class="msg-text">Salam! Mən DAU İntelligent Sisteməm. Sizə necə kömək edə bilərəm?</div>
+                    <div class="msg-time" id="chatWelcomeTime">--:--</div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" class="hud-input chat-msg-input" placeholder="Mesaj yazın..." onkeydown="if(event.key==='Enter')chatSend()">
+            <button class="btn-hud btn-primary chat-send-btn" onclick="chatSend()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+    </div>
+</aside>

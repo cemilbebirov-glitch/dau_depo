@@ -1,0 +1,44 @@
+<!-- ======= MODULE: RAG ======= -->
+<section class="module-panel" id="module-rag" style="display:none;">
+    <div class="panel-header">
+        <div class="panel-title-group">
+            <div class="panel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>
+            </div>
+            <h2 class="panel-title">RAG SİSTEMİ</h2>
+        </div>
+        <div class="panel-actions">
+            <button class="btn-hud" onclick="ragShowUpload()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                YÜKLƏ
+            </button>
+        </div>
+    </div>
+    <!-- Upload Area -->
+    <div class="rag-upload-area" id="ragUploadArea" style="display:none;">
+        <div class="upload-dropzone" id="ragDropzone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff3366" stroke-width="1.5" width="48" height="48"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+            <p>Fayl bura sürüşdürün və ya klikləyin</p>
+            <p class="upload-hint">PDF, DOCX, TXT, CSV faylları dəstəklənir</p>
+            <input type="file" id="ragFileInput" multiple accept=".pdf,.docx,.txt,.csv,.py,.js" style="display:none" onchange="ragUploadFiles()">
+        </div>
+    </div>
+    <!-- RAG Query -->
+    <div class="hud-search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ff3366" stroke-width="2"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg>
+        <input type="text" id="ragQuery" placeholder="Sual verin..." onkeydown="if(event.key==='Enter')ragSearch()">
+        <button class="btn-hud btn-primary" onclick="ragSearch()">AXTAR</button>
+    </div>
+    <!-- Documents List -->
+    <div class="panel-subsection">
+        <h3 class="subsection-title">SƏNƏDLƏR</h3>
+        <div class="data-list" id="ragDocList">
+            <div class="hud-empty">Sənəd yüklənməyib</div>
+        </div>
+    </div>
+    <!-- RAG Results -->
+    <div class="panel-subsection" id="ragResultsSection" style="display:none;">
+        <h3 class="subsection-title">NƏTİCƏLƏR</h3>
+        <div class="data-list" id="ragResults"></div>
+    </div>
+</section>

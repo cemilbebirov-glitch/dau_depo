@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAU - JARVIS Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/bot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ============ OVERLAYS & BOOT ============ -->
+    {% include 'panels/boot_screen.html' %}
+
+    <!-- ============ MAIN DASHBOARD ============ -->
+    <div id="mainDashboard" class="dashboard" style="display:none;">
+
+        <!-- ====== TOP HUD BAR ====== -->
+        {% include 'panels/hud_top.html' %}
+
+        <!-- ====== MAIN CONTENT AREA ====== -->
+        <div class="main-container">
+
+            <!-- ====== LEFT SIDEBAR ====== -->
+            {% include 'panels/sidebar.html' %}
+
+            <!-- ====== CENTER CONTENT ====== -->
+            <main class="content-area">
+                <!-- HUD Corner Decorations -->
+                <div class="hud-corner hud-corner-tl"></div>
+                <div class="hud-corner hud-corner-tr"></div>
+                <div class="hud-corner hud-corner-bl"></div>
+                <div class="hud-corner hud-corner-br"></div>
+
+                <!-- ====== MODULE PANELS ====== -->
+                {% include 'panels/module_memory.html' %}
+                {% include 'panels/module_agent.html' %}
+                {% include 'panels/module_rag.html' %}
+                {% include 'panels/module_bot.html' %}
+                {% include 'panels/module_trading.html' %}
+                {% include 'panels/module_mt5.html' %}
+                {% include 'panels/module_workspace.html' %}
+                {% include 'panels/module_monitor.html' %}
+                {% include 'panels/module_model.html' %}
+            </main>
+
+            <!-- ====== RIGHT SIDEBAR - CHAT ====== -->
+            {% include 'panels/chat_sidebar.html' %}
+        </div>
+
+        <!-- ====== BOTTOM HUD BAR ====== -->
+        {% include 'panels/hud_bottom.html' %}
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+    <script src="/static/js/memory.js"></script>
+    <script src="/static/js/agent.js"></script>
+    <script src="/static/js/rag.js"></script>
+    <script src="/static/js/trading.js"></script>
+    <script src="/static/js/mt5.js"></script>
+    <script src="/static/js/workspace.js"></script>
+    <script src="/static/js/monitor.js"></script>
+    <script src="/static/js/model.js"></script>
+    <script src="/static/js/bot.js"></script>
+</body>
+</html>

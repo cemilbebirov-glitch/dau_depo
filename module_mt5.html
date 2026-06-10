@@ -1,0 +1,66 @@
+<!-- ======= MODULE: MT5 ======= -->
+<section class="module-panel" id="module-mt5" style="display:none;">
+    <div class="panel-header">
+        <div class="panel-title-group">
+            <div class="panel-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="2"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+            </div>
+            <h2 class="panel-title">MT5 MODULU</h2>
+        </div>
+        <div class="panel-actions">
+            <button class="btn-hud" id="mt5ConnectBtn" onclick="mt5Connect()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                QOŞUL
+            </button>
+        </div>
+    </div>
+    <!-- MT5 Connection Status -->
+    <div class="mt5-status" id="mt5Status">
+        <div class="mt5-status-indicator disconnected">
+            <span class="status-dot"></span>
+            <span>ƏLAQƏ YOXDUR</span>
+        </div>
+    </div>
+    <!-- MT5 Account Info -->
+    <div class="mt5-info-grid" id="mt5AccountInfo" style="display:none;">
+        <div class="mt5-info-card">
+            <div class="info-label">BALANS</div>
+            <div class="info-value" id="mt5Balance">--</div>
+        </div>
+        <div class="mt5-info-card">
+            <div class="info-label">SƏRMAYƏ</div>
+            <div class="info-value" id="mt5Equity">--</div>
+        </div>
+        <div class="mt5-info-card">
+            <div class="info-label">MƏNFƏƏT</div>
+            <div class="info-value" id="mt5Profit">--</div>
+        </div>
+        <div class="mt5-info-card">
+            <div class="info-label">MARJIN</div>
+            <div class="info-value" id="mt5Margin">--</div>
+        </div>
+    </div>
+    <!-- MT5 Symbols -->
+    <div class="panel-subsection" id="mt5SymbolsSection" style="display:none;">
+        <h3 class="subsection-title">SİMVOLLAR</h3>
+        <div class="hud-search-bar">
+            <input type="text" id="mt5SymbolSearch" class="hud-input" placeholder="Simvol axtar..." onkeydown="if(event.key==='Enter')mt5GetPrice()">
+            <button class="btn-hud btn-primary" onclick="mt5GetPrice()">QİYMƏT</button>
+        </div>
+        <div id="mt5PriceDisplay" class="mt5-price-display" style="display:none;"></div>
+    </div>
+    <!-- MT5 Positions -->
+    <div class="panel-subsection" id="mt5PositionsSection" style="display:none;">
+        <h3 class="subsection-title">POZİSİYALAR</h3>
+        <div class="data-table-container">
+            <table class="hud-table">
+                <thead>
+                    <tr><th>SİMVOL</th><th>TİP</th><th>HƏCM</th><th>GİRİŞ</th><th>P&L</th></tr>
+                </thead>
+                <tbody id="mt5PositionsBody">
+                    <tr><td colspan="5" class="hud-empty">Pozisiya yoxdur</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,100 @@
+<!-- ====== LEFT SIDEBAR - NAVIGATION ====== -->
+<nav class="sidebar">
+    <div class="sidebar-inner">
+        <!-- Hexagonal Profile -->
+        <div class="sidebar-profile">
+            <div class="hex-avatar">
+                <svg viewBox="0 0 120 140" class="hex-svg">
+                    <polygon points="60,5 115,37 115,103 60,135 5,103 5,37" fill="rgba(255,0,64,0.1)" stroke="#ff0040" stroke-width="2"/>
+                    <text x="60" y="78" text-anchor="middle" fill="#ff0040" font-family="Orbitron" font-size="18" font-weight="700">AI</text>
+                </svg>
+            </div>
+            <div class="profile-name">DAU</div>
+            <div class="profile-status">AKTİV</div>
+        </div>
+
+        <!-- Navigation Modules -->
+        <div class="nav-section">
+            <div class="nav-section-title">MODULLAR</div>
+            <ul class="nav-list">
+                <li class="nav-item active" data-module="memory" onclick="switchModule('memory')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <span class="nav-label">Yaddaş</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="agent" onclick="switchModule('agent')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3a3 3 0 110 6 3 3 0 010-6zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>
+                    </div>
+                    <span class="nav-label">Agent</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="rag" onclick="switchModule('rag')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h3v2H8z"/></svg>
+                    </div>
+                    <span class="nav-label">RAG</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="bot" onclick="switchModule('bot')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1.17A7 7 0 015.17 19H4a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1V5.73A2 2 0 0112 2zm-1 10a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3z"/></svg>
+                    </div>
+                    <span class="nav-label">Trade Bot</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="trading" onclick="switchModule('trading')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    </div>
+                    <span class="nav-label">Ticarət</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="mt5" onclick="switchModule('mt5')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/><circle cx="16" cy="12" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>
+                    </div>
+                    <span class="nav-label">MT5</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="workspace" onclick="switchModule('workspace')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <span class="nav-label">Kod Sahəsi</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="monitor" onclick="switchModule('monitor')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                    </div>
+                    <span class="nav-label">Monitor</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-module="model" onclick="switchModule('model')">
+                    <div class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <span class="nav-label">Model</span>
+                    <div class="nav-indicator"></div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- System Info -->
+        <div class="sidebar-footer">
+            <div class="sys-info">
+                <div class="sys-info-row">
+                    <span class="sys-label">UPTİME</span>
+                    <span class="sys-value" id="sysUptime">0d 0h 0m</span>
+                </div>
+                <div class="sys-info-row">
+                    <span class="sys-label">VERSİYA</span>
+                    <span class="sys-value">v3.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
