@@ -1,0 +1,25 @@
+<!-- ===== COMPONENT: BOT SIMULATION TAB ===== -->
+<div class="bot-tab-content" id="botTab-sim" style="display:none;">
+    <div class="panel-subsection">
+        <h3 class="subsection-title">STRATEQİ SİMULYASİYASI</h3>
+        <p style="color:#ff3366; font-family:'Share Tech Mono'; font-size:12px; margin-bottom:12px;">MT5 qoşulmadan strateqiyanı test edin</p>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="hud-label">SİMVOL</label>
+                <select id="simSymbol" class="hud-select">
+                    <option value="XAUUSDm">XAUUSDm</option>
+                    <option value="BTCUSDm">BTCUSDm</option>
+                    <option value="ETHUSDm">ETHUSDm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="hud-label">STRATEQİ</label>
+                <select id="simStrategy" class="hud-select"></select>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn-hud btn-primary" onclick="BotManager.runSimulation()">SİMULYASİYA İŞLƏT</button>
+        </div>
+        <div id="botSimResults" style="display:none;"></div>
+    </div>
+</div>

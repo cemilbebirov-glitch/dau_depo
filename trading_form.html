@@ -1,0 +1,46 @@
+<!-- ===== COMPONENT: TRADING ADD FORM ===== -->
+<div class="hud-form" id="tradingAddForm" style="display:none;">
+    <div class="form-row">
+        <div class="form-group">
+            <label class="hud-label">SİMVOL</label>
+            <input type="text" id="tradeSymbol" class="hud-input" placeholder="EURUSD">
+        </div>
+        <div class="form-group">
+            <label class="hud-label">TİP</label>
+            <select id="tradeType" class="hud-select">
+                <option value="BUY">ALIŞ</option>
+                <option value="SELL">SATIŞ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="hud-label">HƏCM</label>
+            <input type="number" id="tradeVolume" class="hud-input" step="0.01" value="0.1">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label class="hud-label">GİRİŞ QİYMƏTİ</label>
+            <input type="number" id="tradeEntryPrice" class="hud-input" step="0.00001">
+        </div>
+        <div class="form-group">
+            <label class="hud-label">ÇIXIŞ QİYMƏTİ</label>
+            <input type="number" id="tradeExitPrice" class="hud-input" step="0.00001">
+        </div>
+        <div class="form-group">
+            <label class="hud-label">STOP LOSS</label>
+            <input type="number" id="tradeStopLoss" class="hud-input" step="0.00001">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="hud-label">STRATEQİ</label>
+        <select id="tradeStrategy" class="hud-select"></select>
+    </div>
+    <div class="form-group">
+        <label class="hud-label">QEYDLƏR</label>
+        <textarea id="tradeNotes" class="hud-textarea" rows="2"></textarea>
+    </div>
+    <div class="form-actions">
+        <button class="btn-hud btn-primary" onclick="tradingSave()">YADDƏ SAXLA</button>
+        <button class="btn-hud" onclick="tradingHideAdd()">LƏĞV ET</button>
+    </div>
+</div>

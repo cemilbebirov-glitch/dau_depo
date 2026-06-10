@@ -1,0 +1,18 @@
+<!-- ===== COMPONENT: BOT MT5 TAB ===== -->
+<div class="bot-tab-content" id="botTab-mt5" style="display:none;">
+    <div class="panel-subsection">
+        <div class="mt5-status" id="botMT5Status">
+            <div class="mt5-status-indicator disconnected">
+                <span class="status-dot"></span>
+                <span>ƏLAQƏ YOXDUR</span>
+            </div>
+        </div>
+        <div class="panel-actions" style="margin:10px 0;">
+            <button class="btn-hud btn-primary" id="botMT5ConnectBtn" onclick="BotManager.connectMT5()">QOŞUL</button>
+            <button class="btn-hud" onclick="BotManager.loadMT5Account()">HESAB MƏLUMATI</button>
+            <button class="btn-hud" onclick="BotManager.loadMT5Positions()">POZİSİYALAR</button>
+        </div>
+        <div id="botMT5Info" style="display:none;"></div>
+        <div id="botMT5Positions"></div>
+    </div>
+</div>

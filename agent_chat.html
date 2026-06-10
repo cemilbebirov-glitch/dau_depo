@@ -1,0 +1,24 @@
+<!-- ===== COMPONENT: AGENT CHAT AREA ===== -->
+<div class="agent-chat-area">
+    <div class="chat-container" id="agentChatContainer">
+        <div class="chat-welcome">
+            <div class="chat-welcome-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ff0040" stroke-width="1.5" width="48" height="48"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            </div>
+            <div class="chat-welcome-text">Agentə tapşırıq göndərin</div>
+        </div>
+    </div>
+    <div class="chat-input-area">
+        <select id="agentSelect" class="hud-select chat-agent-select">
+            <option value="jarvis">JARVIS</option>
+            <option value="coder">CODER</option>
+            <option value="analyst">ANALYST</option>
+            <option value="trader">TRADER</option>
+            <option value="researcher">RESEARCHER</option>
+        </select>
+        <input type="text" id="agentInput" class="hud-input chat-input" placeholder="Tapşırıq daxil edin..." onkeydown="if(event.key==='Enter')agentSend()">
+        <button class="btn-hud btn-primary chat-send" onclick="agentSend()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+    </div>
+</div>
