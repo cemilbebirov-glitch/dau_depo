@@ -1,0 +1,247 @@
+/* ============================================
+   DAU JARVIS DASHBOARD - MEMORY MODULE STYLES
+   Red Hacker Theme
+   ============================================ */
+
+/* ---- DATA GRID ---- */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+}
+
+/* ---- MEMORY CARD ---- */
+.memory-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 12px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--red-primary);
+    transition: var(--transition);
+}
+
+.memory-card:hover {
+    border-color: var(--red-border-bright);
+    box-shadow: var(--glow-sm);
+}
+
+.memory-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.memory-category {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--red-glow);
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    border: 1px solid var(--red-border);
+    border-radius: 2px;
+}
+
+.memory-importance {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+.memory-importance.high {
+    color: #ff3333;
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    background: rgba(255, 51, 51, 0.1);
+}
+
+.memory-importance.critical {
+    color: #ff0040;
+    border: 1px solid rgba(255, 0, 64, 0.5);
+    background: rgba(255, 0, 64, 0.15);
+    animation: criticalPulse 2s ease-in-out infinite;
+}
+
+@keyframes criticalPulse {
+    0%, 100% { box-shadow: 0 0 3px rgba(255, 0, 64, 0.2); }
+    50% { box-shadow: 0 0 10px rgba(255, 0, 64, 0.5); }
+}
+
+.memory-importance.medium {
+    color: #ff8800;
+    border: 1px solid rgba(255, 136, 0, 0.3);
+    background: rgba(255, 136, 0, 0.1);
+}
+
+.memory-importance.low {
+    color: #0088ff;
+    border: 1px solid rgba(0, 136, 255, 0.3);
+    background: rgba(0, 136, 255, 0.1);
+}
+
+.memory-content {
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    word-break: break-word;
+}
+
+.memory-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.memory-time {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.memory-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* ---- BTN ICON ---- */
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--red-border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    transition: var(--transition);
+    font-size: 12px;
+}
+
+.btn-icon:hover {
+    border-color: var(--red-primary);
+    color: var(--red-primary);
+    box-shadow: var(--glow-sm);
+}
+
+.btn-icon.delete:hover {
+    border-color: #ff3333;
+    color: #ff3333;
+}
+
+/* ---- MEMORY SEARCH FILTERS ---- */
+.memory-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.memory-filter-chip {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border: 1px solid var(--red-border);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.memory-filter-chip:hover {
+    border-color: var(--red-border-bright);
+    color: var(--text-secondary);
+}
+
+.memory-filter-chip.active {
+    background: rgba(255, 0, 64, 0.15);
+    border-color: var(--red-primary);
+    color: var(--red-glow);
+}
+
+/* ---- MEMORY ADD FORM ---- */
+.memory-add-form {
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+.memory-add-form.show {
+    display: block;
+}
+
+.memory-form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.memory-form-row .form-group {
+    flex: 1;
+}
+
+/* ---- MEMORY STATS ---- */
+.memory-stats-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+}
+
+.memory-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.memory-stat-count {
+    color: var(--red-glow);
+    font-weight: 600;
+}
+
+.memory-stat-label {
+    color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-filters {
+        gap: 4px;
+    }
+
+    .memory-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .memory-stats-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

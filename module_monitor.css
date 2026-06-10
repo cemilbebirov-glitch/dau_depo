@@ -1,0 +1,203 @@
+/* ============================================
+   MODULE: SİSTEM MONİTORU
+   ============================================ */
+
+/* ---- MONITOR GAUGES ---- */
+.monitor-gauges {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gauge-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.gauge-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-primary), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gauge-card:hover::after {
+    opacity: 1;
+}
+
+.gauge-card:hover {
+    border-color: var(--red-border-bright);
+    box-shadow: var(--glow-sm);
+}
+
+.gauge-ring {
+    width: 120px;
+    height: 120px;
+}
+
+.gauge-ring svg {
+    width: 100%;
+    height: 100%;
+}
+
+.gauge-fill {
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+/* Gauge color variations */
+.gauge-card.cpu-gauge .gauge-fill {
+    stroke: #ff0040;
+}
+
+.gauge-card.ram-gauge .gauge-fill {
+    stroke: #ff3366;
+}
+
+.gauge-card.disk-gauge .gauge-fill {
+    stroke: #cc0033;
+}
+
+.gauge-card.gpu-gauge .gauge-fill {
+    stroke: #ff1a1a;
+}
+
+/* ---- MONITOR DETAILS ---- */
+.monitor-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.monitor-detail-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 15px;
+    transition: var(--transition);
+}
+
+.monitor-detail-card:hover {
+    border-color: var(--red-border-bright);
+}
+
+.detail-title {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--red-glow);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 0, 64, 0.15);
+}
+
+.detail-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    font-size: 12px;
+}
+
+.detail-row-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.detail-row-value {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--red-glow);
+}
+
+.detail-row-value.status-ok {
+    color: #00ff66;
+}
+
+.detail-row-value.status-warn {
+    color: #ff8800;
+}
+
+.detail-row-value.status-critical {
+    color: #ff3333;
+    animation: criticalBlink 1s ease-in-out infinite;
+}
+
+@keyframes criticalBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ---- MONITOR PROGRESS BARS ---- */
+.monitor-bar {
+    height: 4px;
+    background: rgba(255, 0, 64, 0.1);
+    border-radius: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.monitor-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.8s ease;
+    box-shadow: 0 0 5px rgba(255, 0, 64, 0.3);
+}
+
+.monitor-bar-fill.bar-green {
+    background: linear-gradient(90deg, #009933, #00ff66);
+}
+
+.monitor-bar-fill.bar-yellow {
+    background: linear-gradient(90deg, #cc6600, #ff8800);
+}
+
+.monitor-bar-fill.bar-red {
+    background: linear-gradient(90deg, #cc0033, #ff3333);
+}
+
+/* ---- MONITOR PROCESS TABLE ---- */
+.process-cpu-high {
+    color: #ff3333;
+}
+
+.process-ram-high {
+    color: #ff8800;
+}
+
+/* ---- MONITOR RESPONSIVE ---- */
+@media (max-width: 900px) {
+    .monitor-gauges {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .monitor-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .monitor-gauges {
+        grid-template-columns: 1fr;
+    }
+}

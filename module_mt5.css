@@ -1,0 +1,217 @@
+/* ============================================
+   MODULE: MT5 MODULU
+   ============================================ */
+
+/* ---- MT5 STATUS ---- */
+.mt5-status {
+    margin-bottom: 15px;
+}
+
+.mt5-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+
+.mt5-status-indicator.connected {
+    color: #00ff66;
+    border-color: rgba(0, 255, 102, 0.3);
+    background: rgba(0, 255, 102, 0.02);
+}
+
+.mt5-status-indicator.disconnected {
+    color: #ff3333;
+    border-color: rgba(255, 51, 51, 0.3);
+}
+
+.mt5-status-indicator.connecting {
+    color: #ff8800;
+    border-color: rgba(255, 136, 0, 0.3);
+    animation: connectPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes connectPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff3333;
+    box-shadow: 0 0 8px rgba(255, 51, 51, 0.5);
+    transition: var(--transition);
+}
+
+.mt5-status-indicator.connected .status-dot {
+    background: #00ff66;
+    box-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+    animation: dotGlow 2s ease-in-out infinite;
+}
+
+@keyframes dotGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 102, 0.3); }
+    50% { box-shadow: 0 0 12px rgba(0, 255, 102, 0.6); }
+}
+
+.mt5-status-indicator.connecting .status-dot {
+    background: #ff8800;
+    box-shadow: 0 0 8px rgba(255, 136, 0, 0.5);
+}
+
+/* ---- MT5 ACCOUNT INFO ---- */
+.mt5-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mt5-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 12px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mt5-info-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-primary), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.mt5-info-card:hover::after {
+    opacity: 1;
+}
+
+.mt5-info-card:hover {
+    border-color: var(--red-border-bright);
+}
+
+.info-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--red-glow);
+    text-shadow: 0 0 5px rgba(255, 0, 64, 0.3);
+}
+
+.mt5-info-card.profit .info-value {
+    color: #00ff66;
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.3);
+}
+
+.mt5-info-card.loss .info-value {
+    color: #ff3333;
+    text-shadow: 0 0 5px rgba(255, 51, 51, 0.3);
+}
+
+/* ---- MT5 PRICE DISPLAY ---- */
+.mt5-price-display {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border-bright);
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: var(--glow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.mt5-price-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-primary), transparent);
+    animation: priceScan 3s linear infinite;
+}
+
+@keyframes priceScan {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.mt5-price-symbol {
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--text-primary);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.mt5-price-value {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red-primary);
+    text-shadow: 0 0 15px rgba(255, 0, 64, 0.5);
+}
+
+.mt5-price-change {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.mt5-price-change.up {
+    color: #00ff66;
+}
+
+.mt5-price-change.down {
+    color: #ff3333;
+}
+
+/* ---- MT5 CONNECTION FORM ---- */
+.mt5-connect-form {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* ---- MT5 RESPONSIVE ---- */
+@media (max-width: 900px) {
+    .mt5-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mt5-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

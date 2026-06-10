@@ -1,0 +1,227 @@
+/* ============================================
+   MODULE: MODEL İDARƏETMƏ
+   ============================================ */
+
+/* ---- ACTIVE MODEL CARD ---- */
+.model-active-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border-bright);
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--glow-sm);
+}
+
+.model-active-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--red-primary), var(--red-bright), var(--red-primary));
+    animation: modelScan 3s linear infinite;
+}
+
+@keyframes modelScan {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.model-active-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.model-active-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+}
+
+.model-active-badge {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: #00ff66;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    border-radius: 2px;
+    background: rgba(0, 255, 102, 0.05);
+}
+
+.model-active-badge.inactive {
+    color: #ff3333;
+    border-color: rgba(255, 51, 51, 0.3);
+    background: rgba(255, 51, 51, 0.05);
+}
+
+.model-active-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red-primary);
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 0, 64, 0.4);
+}
+
+.model-active-provider {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.model-active-url {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ---- MODEL GRID ---- */
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.model-card {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.model-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--red-primary);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.model-card:hover::before {
+    opacity: 1;
+}
+
+.model-card:hover {
+    border-color: var(--red-border-bright);
+    box-shadow: var(--glow-sm);
+}
+
+.model-card.active-model {
+    border-color: var(--red-primary);
+    background: rgba(255, 0, 64, 0.08);
+    box-shadow: var(--glow-md);
+}
+
+.model-card.active-model::before {
+    opacity: 1;
+    background: #00ff66;
+}
+
+.model-card-name {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.model-card-provider {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.model-card-status {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.model-card-status.online {
+    color: #00ff66;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    background: rgba(0, 255, 102, 0.05);
+}
+
+.model-card-status.offline {
+    color: #ff3333;
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    background: rgba(255, 51, 51, 0.05);
+}
+
+.model-card-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 0, 64, 0.08);
+}
+
+/* ---- MODEL ADD FORM ---- */
+.model-add-form .hud-form {
+    background: var(--bg-card);
+    border: 1px solid var(--red-border);
+    border-radius: 3px;
+    padding: 15px;
+}
+
+/* ---- MODEL TEST INDICATOR ---- */
+.model-testing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 0, 64, 0.05);
+    border: 1px solid var(--red-border);
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.model-testing-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--red-glow);
+    letter-spacing: 1px;
+}
+
+/* ---- MODEL RESPONSIVE ---- */
+@media (max-width: 900px) {
+    .model-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+    .model-active-name {
+        font-size: 16px;
+    }
+}
